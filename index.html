@@ -110,7 +110,7 @@
         }
 
         .navbar-logo img {
-            height: 40px;
+            height: 60px;
             width: auto;
         }
 
@@ -135,47 +135,52 @@
         .hero {
             position: relative;
             padding: 140px 0 80px;
-            background: linear-gradient(135deg, var(--color-navy) 0%, #4a3a4d 100%);
-            overflow: hidden;
+            background: var(--color-white);
             min-height: 90vh;
             display: flex;
             align-items: center;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(600px 400px at 80% 0%, rgba(206,172,59,0.15), transparent 60%);
-        }
-
-        .hero-bg-image {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url('https://stellamia-crowdfunding.lovable.app/assets/hero-parent-child-CL2Kz7-X.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.25;
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+            width: 100%;
         }
 
         .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-image {
             position: relative;
-            z-index: 2;
-            max-width: 750px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 580px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 60px rgba(41,59,91,0.12);
         }
 
         .hero-tag {
             display: inline-block;
             font-family: var(--font-sans);
-            font-size: 13px;
-            font-weight: 500;
+            font-size: 11px;
+            font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--color-gold);
+            color: var(--color-white);
+            background: #be9959;
             margin-bottom: var(--space-md);
-            border: 1px solid var(--color-gold);
-            padding: 4px 14px;
-            border-radius: 20px;
+            padding: 5px 12px;
+            border-radius: 23px;
+            max-width: 265px;
+            text-align: center;
         }
 
         .hero h1 {
@@ -183,34 +188,39 @@
             font-size: 52px;
             font-weight: 500;
             line-height: 1.1;
-            color: var(--color-text-light);
+            color: var(--color-navy);
             margin-bottom: var(--space-md);
-            text-shadow: 1px 1px 5px rgba(41,59,91,0.8);
         }
 
         .hero p {
             font-family: var(--font-sans);
             font-size: 17px;
             font-weight: 300;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: var(--space-lg);
-            max-width: 620px;
+            color: var(--color-text);
+            margin-bottom: var(--space-md);
+            max-width: 560px;
         }
 
         /* Hero Form */
         .hero-form {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: var(--border-radius);
-            padding: var(--space-md);
-            max-width: 480px;
+            max-width: 460px;
+            margin-bottom: var(--space-sm);
         }
 
         .hero-form-input-row {
             display: flex;
-            gap: 10px;
-            margin-bottom: 12px;
+            gap: 0;
+            margin-bottom: 10px;
+            border: 1.5px solid var(--color-beige);
+            border-radius: var(--border-radius-sm);
+            background: var(--color-offwhite);
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+
+        .hero-form-input-row:focus-within {
+            border-color: var(--color-purple);
+            background: var(--color-white);
         }
 
         .hero-form input[type="email"] {
@@ -218,15 +228,18 @@
             font-family: var(--font-sans);
             font-size: 15px;
             padding: 14px 16px;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: var(--border-radius-sm);
-            background: rgba(255,255,255,0.95);
+            border: none;
+            background: transparent;
             color: var(--color-text);
             outline: none;
         }
 
         .hero-form input[type="email"]::placeholder {
-            color: #999;
+            color: #aaa;
+        }
+
+        .hero-form .hero-form-btn {
+            border-radius: 0;
         }
 
         .hero-form-btn {
@@ -252,15 +265,15 @@
 
         .hero-form-note {
             font-family: var(--font-sans);
-            font-size: 12px;
-            color: rgba(255,255,255,0.6);
+            font-size: 10px;
+            color: var(--color-blue-gray);
         }
 
         /* Hero trust badges */
         .hero-badges {
             display: flex;
-            gap: var(--space-md);
-            margin-top: var(--space-md);
+            gap: var(--space-sm);
+            margin-top: var(--space-sm);
             flex-wrap: wrap;
         }
 
@@ -270,30 +283,24 @@
             gap: 8px;
             font-family: var(--font-sans);
             font-size: 14px;
-            color: rgba(255,255,255,0.85);
+            color: var(--color-text);
         }
 
         .hero-badge-icon {
             font-size: 18px;
         }
 
-        /* Side badge */
+        /* Side badge — overlay on hero image */
         .hero-side-badge {
             position: absolute;
-            right: 8%;
-            top: 50%;
-            transform: translateY(-50%);
+            bottom: -18px;
+            left: -18px;
             background: linear-gradient(135deg, var(--color-gold), #b39332);
             color: var(--color-white);
-            padding: 20px 24px;
+            padding: 18px 22px;
             border-radius: var(--border-radius);
             text-align: center;
-            z-index: 2;
-            display: none;
-        }
-
-        @media (min-width: 1100px) {
-            .hero-side-badge { display: block; }
+            box-shadow: 0 8px 24px rgba(193,155,101,0.35);
         }
 
         .hero-side-badge .badge-tag {
@@ -315,10 +322,10 @@
         .hero-date {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            margin-top: var(--space-md);
-            padding: 10px 20px;
-            border: 1px solid rgba(206,172,59,0.4);
+            gap: 10px;
+            margin-top: var(--space-sm);
+            padding: 7px 16px;
+            background: var(--color-offwhite);
             border-radius: 30px;
         }
 
@@ -335,7 +342,7 @@
             font-family: var(--font-serif-display);
             font-size: 20px;
             font-weight: 500;
-            color: var(--color-text-light);
+            color: var(--color-navy);
         }
 
         /* ============================================
@@ -361,6 +368,9 @@
             text-transform: uppercase;
             color: var(--color-purple);
             margin-bottom: var(--space-sm);
+            border: 1px solid rgba(109,80,102,0.4);
+            padding: 4px 14px;
+            border-radius: 20px;
         }
 
         .section-header h2 {
@@ -403,11 +413,11 @@
 
         .edition-card-image {
             width: 100%;
-            height: 180px;
-            object-fit: cover;
+            height: 200px;
+            object-fit: contain;
             border-radius: 8px;
             margin-bottom: var(--space-md);
-            background: var(--color-beige);
+            background: var(--color-cream);
         }
 
         .edition-card-tag {
@@ -447,19 +457,18 @@
             font-family: var(--font-sans);
             font-size: 14px;
             color: var(--color-text);
-            padding: 6px 0;
+            padding: 6px 0 6px 20px;
             border-bottom: 1px solid var(--color-cream);
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
+            position: relative;
         }
 
         .edition-benefits li::before {
             content: '★';
             color: var(--color-gold);
-            font-size: 12px;
-            margin-top: 2px;
-            flex-shrink: 0;
+            font-size: 11px;
+            position: absolute;
+            left: 0;
+            top: 9px;
         }
 
         .edition-card-cta {
@@ -486,20 +495,22 @@
            ============================================ */
         .why-section {
             padding: var(--space-2xl) 0;
-            background: var(--color-navy);
+            background: linear-gradient(135deg, var(--color-navy) 0%, #4a3a4d 100%);
             color: var(--color-white);
         }
 
-        .why-section .section-header h2 {
-            color: var(--color-white);
-        }
-
-        .why-section .section-header p {
-            color: rgba(255,255,255,0.8);
-        }
-
-        .why-section .section-tag {
+        /* Dark section modifier — shared by why-section and signup-section */
+        .section-dark .section-tag {
             color: var(--color-gold);
+            border-color: rgba(193,155,101,0.5);
+        }
+
+        .section-dark .section-header h2 {
+            color: var(--color-white);
+        }
+
+        .section-dark .section-header p {
+            color: rgba(255,255,255,0.8);
         }
 
         .stats-grid {
@@ -570,15 +581,16 @@
             text-align: center;
         }
 
+        .limitada-section .section-header {
+            margin-bottom: 0;
+        }
+
         .limitada-section .section-tag {
             color: var(--color-gold);
             border-color: var(--color-gold);
-            border: 1px solid var(--color-gold);
-            padding: 4px 14px;
-            border-radius: 20px;
         }
 
-        .limitada-section h3 {
+        .limitada-section h2 {
             font-family: var(--font-serif-display);
             font-size: 36px;
             font-weight: 500;
@@ -604,18 +616,6 @@
             text-align: center;
         }
 
-        .signup-section .section-tag {
-            color: var(--color-gold);
-        }
-
-        .signup-section .section-header h2 {
-            color: var(--color-white);
-        }
-
-        .signup-section .section-header p {
-            color: rgba(255,255,255,0.8);
-        }
-
         /* Form */
         .signup-form {
             max-width: 480px;
@@ -623,10 +623,7 @@
         }
 
         .signup-form .hero-form-input-row {
-            background: rgba(255,255,255,0.1);
-            padding: 6px;
-            border-radius: var(--border-radius-sm);
-            gap: 6px;
+            gap: 10px;
         }
 
         .signup-form input[type="email"] {
@@ -653,7 +650,7 @@
             color: var(--color-white);
             border: none;
             border-radius: var(--border-radius-sm);
-            padding: 12px 24px;
+            padding: 14px 24px;
             cursor: pointer;
             white-space: nowrap;
             display: flex;
@@ -790,6 +787,12 @@
            RESPONSIVE
            ============================================ */
         @media (max-width: 991px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+            }
+            .hero-image {
+                display: none;
+            }
             .ediciones-grid {
                 grid-template-columns: 1fr;
                 max-width: 480px;
@@ -871,7 +874,6 @@
          HERO SECTION
          ============================================ -->
     <section class="hero" id="hero">
-        <div class="hero-bg-image"></div>
         <div class="container">
             <div class="hero-content">
                 <span class="hero-tag">Sommer 2026 · Crowdfunding</span>
@@ -909,11 +911,14 @@
                     <span class="hero-date-value">Sommer 2026</span>
                 </div>
             </div>
-        </div>
 
-        <div class="hero-side-badge">
-            <div class="badge-tag">Early-Bird</div>
-            <div class="badge-value">Bis zu 40% sparen</div>
+            <div class="hero-image">
+                <img src="https://stellamia-crowdfunding.lovable.app/assets/hero-parent-child-CL2Kz7-X.jpg" alt="Eltern mit Kind">
+                <div class="hero-side-badge">
+                    <div class="badge-tag">Early-Bird</div>
+                    <div class="badge-value">Bis zu 40% sparen</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -977,7 +982,7 @@
     <!-- ============================================
          POR QUÉ STELLAMIA
          ============================================ -->
-    <section class="why-section">
+    <section class="why-section section-dark">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Warum Stellamia</span>
@@ -1015,16 +1020,18 @@
          ============================================ -->
     <section class="limitada-section">
         <div class="container">
-            <span class="section-tag">Limitiert</span>
-            <h3>Nur die ersten Eintragungen erhalten den vollen Early-Bird-Sonderpreis.</h3>
-            <p>Sanft gesagt: Wir machen das einmal – und wirklich nur einmal. Wer dabei ist, ist dabei. Versprochen ohne erhobenen Zeigefinger.</p>
+            <div class="section-header">
+                <span class="section-tag">Limitiert</span>
+                <h2>Nur die ersten Eintragungen erhalten den vollen Early-Bird-Sonderpreis.</h2>
+                <p>Sanft gesagt: Wir machen das einmal – und wirklich nur einmal. Wer dabei ist, ist dabei. Versprochen ohne erhobenen Zeigefinger.</p>
+            </div>
         </div>
     </section>
 
     <!-- ============================================
          SIGNUP FINAL
          ============================================ -->
-    <section class="signup-section" id="signup-form">
+    <section class="signup-section section-dark" id="signup-form">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Jetzt eintragen</span>
