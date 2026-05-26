@@ -14,9 +14,8 @@ tareas.
 - Aplicacion de una sola pagina implementada en `index.html`.
 - HTML, CSS y JavaScript vanilla embebidos; no existe proceso de build.
 - Diseno responsive con puntos de ajuste para escritorio, tablet y movil.
-- Formularios Early-Bird en modo demostracion: validan el correo en el
-  navegador y muestran confirmacion temporal, pero **no envian ni almacenan
-  datos**.
+- Formularios Early-Bird conectados a Zoho CRM WebToContact: solicitan
+  nombre de cliente, apellido y correo electronico y muestran confirmacion tras el envio.
 - Dominio personalizado configurado mediante `CNAME`:
   `crowdfunding.stellamia.eu`.
 
@@ -62,15 +61,16 @@ Abrir:
 
 ### Comportamiento JavaScript
 
-La landing define dos funciones al final del HTML:
+La landing mantiene la navegacion hacia el formulario con `scrollToSignup()` y
+registra ambos bloques Early-Bird mediante Zoho CRM WebToContact. El script:
 
-- `scrollToSignup()`: desplaza suavemente la ventana al formulario del hero.
-- `handleFormSubmit(event, form)`: evita el envio del formulario y sustituye
-  temporalmente el texto del boton por una confirmacion visual.
+- valida los campos obligatorios de nombre de cliente, apellido y correo electronico;
+- envia los datos a `https://crm.zoho.eu/crm/WebToContactForm`;
+- mantiene los parametros ocultos y el script de analitica requeridos por Zoho;
+- muestra confirmacion o error sin abandonar la landing.
 
-Actualmente no hay endpoint, proveedor de mailing, consentimiento persistido
-ni manejo de errores de red. Para una campana real, la integracion del registro
-es el pendiente funcional principal.
+El consentimiento, la politica de privacidad y la baja deben revisarse antes
+de usar la captacion en produccion.
 
 ### Diseno y recursos externos
 
@@ -131,7 +131,7 @@ debe comprobar:
 
 ## Pendientes antes de produccion
 
-- Conectar ambos formularios a un sistema real de suscripcion Early-Bird.
+- Validar en Zoho CRM la recepcion, segmentacion y automatizaciones de los registros Early-Bird.
 - Incorporar consentimiento, privacidad y mecanismo real de baja conforme a
   los requisitos aplicables.
 - Sustituir los enlaces placeholder de aviso legal y privacidad.

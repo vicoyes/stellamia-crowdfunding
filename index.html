@@ -207,39 +207,49 @@
             margin-bottom: var(--space-sm);
         }
 
-        .hero-form-input-row {
-            display: flex;
-            gap: 0;
+        .earlybird-form {
+            display: grid;
+            gap: 10px;
             margin-bottom: 10px;
+        }
+
+        .earlybird-fields {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .earlybird-field--wide {
+            grid-column: 1 / -1;
+        }
+
+        .earlybird-field {
+            flex: 1;
+            min-width: 0;
+            font-family: var(--font-sans);
+            font-size: 15px;
+            padding: 14px 16px;
             border: 1.5px solid var(--color-beige);
             border-radius: var(--border-radius-sm);
             background: var(--color-offwhite);
-            overflow: hidden;
-            transition: border-color 0.2s;
+            color: var(--color-text);
+            outline: none;
+            transition: border-color 0.2s, background 0.2s;
         }
 
-        .hero-form-input-row:focus-within {
+        .earlybird-field:focus {
             border-color: var(--color-purple);
             background: var(--color-white);
         }
 
-        .hero-form input[type="email"] {
-            flex: 1;
-            font-family: var(--font-sans);
-            font-size: 15px;
-            padding: 14px 16px;
-            border: none;
-            background: transparent;
-            color: var(--color-text);
-            outline: none;
-        }
-
-        .hero-form input[type="email"]::placeholder {
+        .earlybird-field::placeholder {
             color: #aaa;
         }
 
-        .hero-form .hero-form-btn {
-            border-radius: 0;
+        .earlybird-form .hero-form-btn,
+        .earlybird-form .signup-form-btn {
+            width: 100%;
+            justify-content: center;
         }
 
         .hero-form-btn {
@@ -267,6 +277,51 @@
             font-family: var(--font-sans);
             font-size: 10px;
             color: var(--color-blue-gray);
+        }
+
+        .wf-custom-message {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            z-index: 11000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: calc(100% - 32px);
+            padding: 12px 16px;
+            border: 1px solid var(--color-beige);
+            border-radius: var(--border-radius-sm);
+            background: var(--color-white);
+            box-shadow: var(--shadow-card);
+            color: var(--color-navy);
+            font-family: var(--font-sans);
+            font-size: 14px;
+            transform: translateX(-50%);
+        }
+
+        .wf-custom-message[hidden] {
+            display: none;
+        }
+
+        .wf-custom-check {
+            position: relative;
+            flex: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--color-purple);
+        }
+
+        .wf-custom-check::after {
+            content: "";
+            position: absolute;
+            left: 7px;
+            top: 4px;
+            width: 5px;
+            height: 9px;
+            border-right: 2px solid var(--color-white);
+            border-bottom: 2px solid var(--color-white);
+            transform: rotate(45deg);
         }
 
         /* Hero trust badges */
@@ -622,23 +677,12 @@
             margin: 0 auto var(--space-lg);
         }
 
-        .signup-form .hero-form-input-row {
-            gap: 10px;
-        }
-
-        .signup-form input[type="email"] {
-            flex: 1;
-            font-family: var(--font-sans);
-            font-size: 15px;
-            padding: 12px 16px;
+        .signup-form .earlybird-field {
             border: 1px solid rgba(255,255,255,0.3);
-            border-radius: var(--border-radius-sm);
             background: rgba(255,255,255,0.95);
-            color: var(--color-text);
-            outline: none;
         }
 
-        .signup-form input[type="email"]::placeholder {
+        .signup-form .earlybird-field::placeholder {
             color: #999;
         }
 
@@ -811,8 +855,12 @@
             .section-header h2 {
                 font-size: 36px;
             }
-            .hero-form-input-row {
-                flex-direction: column;
+            .earlybird-fields {
+                grid-template-columns: 1fr;
+            }
+
+            .earlybird-field--wide {
+                grid-column: auto;
             }
             .hero-form-btn {
                 width: 100%;
@@ -858,6 +906,11 @@
 </head>
 <body>
 
+    <div class="wf-custom-message" id="wf_splash" role="status" aria-live="polite" hidden>
+        <span class="wf-custom-check" aria-hidden="true"></span>
+        <span id="wf_splash_info"></span>
+    </div>
+
     <!-- ============================================
          NAVIGATION
          ============================================ -->
@@ -881,9 +934,20 @@
                 <p>Wir machen Stellamia noch spezifischer: umfangreiche Unterstützung für die jeweilige Lebensphase <em>deines</em> Kindes von 0–1, 1–3 und 3–6 Jahren. Individuell auf die Persönlichkeit deines Kind zugeschnitten. Trag dich jetzt in die Mailingliste ein und sei als Erste:r dabei, wenn die neuen Editionen zu Sonderpreisen starten.</p>
 
                 <div class="hero-form" id="signup">
-                    <form class="hero-form-input-row" onsubmit="handleFormSubmit(event, this)">
-                        <input type="email" placeholder="deine@email.de" required>
-                        <button type="submit" class="hero-form-btn">
+                    <form id="webform986923000000751004" name="WebToContacts986923000000751004" class="earlybird-form zoho-webform" accept-charset="UTF-8">
+                        <!-- Do not remove this code. Required by the Zoho WebToContact form. -->
+                        <input type="text" name="xnQsjsdp" value="a7b63032d556e5b08270bdce7315725a2763711ac3b31cad8875f0ad43790ae3" hidden>
+                        <input type="hidden" name="zc_gad" value="">
+                        <input type="text" name="xmIwtLD" value="7d45384b39f999c6ba4693c1825fd936ef5844ca4ab415f96b7d3cdea7dc0cf39d85b9fbe673d2bcce38866758df2879" hidden>
+                        <input type="text" name="actionType" value="Q29udGFjdHM=" hidden>
+                        <input type="text" name="returnURL" value="null" hidden>
+                        <input type="text" name="aG9uZXlwb3Q" value="" hidden tabindex="-1" autocomplete="off">
+                        <div class="earlybird-fields">
+                            <input class="earlybird-field" type="text" name="Account Name" placeholder="Kunde-Name" maxlength="100" aria-label="Kunde-Name" required>
+                            <input class="earlybird-field" type="text" name="Last Name" placeholder="Nachname" maxlength="80" aria-label="Nachname" required>
+                            <input class="earlybird-field earlybird-field--wide" type="email" name="Email" ftype="email" placeholder="deine@email.de" maxlength="100" aria-label="E-Mail" required>
+                        </div>
+                        <button type="submit" class="hero-form-btn formsubmit">
                             Early-Bird sichern
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </button>
@@ -936,7 +1000,7 @@
             <div class="ediciones-grid">
                 <!-- Card 1: 0-1 Jahre -->
                 <div class="edition-card">
-                    <img class="edition-card-image" src="https://stellamia.eu/wp-content/uploads/2025/09/Diseno-sin-titulo-15-1-min_11zon.webp" alt="Baby 0-1 Jahre">
+                    <img class="edition-card-image" src="https://stellamia.eu/wp-content/uploads/2025/09/peuqno.webp" alt="Baby 0-1 Jahre">
                     <span class="edition-card-tag">0–1 Jahre</span>
                     <h3>Ankommen, fühlen, vertrauen.</h3>
                     <p class="edition-desc">Für die erste, magische Phase. Wir geben dir Einblicke in die Veranlagungen deines Babys, seine individuellen Grundbedürfnisse. Damit du die kleinen Signale deines Babys verstehst – und nachts wieder durchatmen kannst.</p>
@@ -964,7 +1028,7 @@
 
                 <!-- Card 3: 3-6 Jahre -->
                 <div class="edition-card">
-                    <img class="edition-card-image" src="https://stellamia.eu/wp-content/uploads/2025/09/peuqno.webp" alt="Kinder 3-6 Jahre">
+                    <img class="edition-card-image" src="https://stellamia.eu/wp-content/uploads/2025/09/Diseno-sin-titulo-15-1-min_11zon.webp" alt="Kinder 3-6 Jahre">
                     <span class="edition-card-tag">3–6 Jahre</span>
                     <h3>Welt entdecken, Ich entwickeln.</h3>
                     <p class="edition-desc">Freundschaften, Gefühle, Lernen. Wir zeigen dir, wie du die Persönlichkeit <em>deines</em> Kindes in dieser Phase bestmöglich erkennst und stärkst – und Resilienz für ein ganzes Leben pflanzt.</p>
@@ -1036,13 +1100,24 @@
             <div class="section-header">
                 <span class="section-tag">Jetzt eintragen</span>
                 <h2>Sei als Erste:r dabei, wenn die neuen Editionen starten.</h2>
-                <p>Eine kurze E-Mail genügt. Wir melden uns vor allen anderen, sobald die Crowdfunding-Aktion live geht – mit deinem persönlichen Sonderpreis.</p>
+                <p>Kunde-Name, Nachname und E-Mail genügen. Wir melden uns vor allen anderen, sobald die Crowdfunding-Aktion live geht – mit deinem persönlichen Sonderpreis.</p>
             </div>
 
             <div class="signup-form">
-                <form class="hero-form-input-row" onsubmit="handleFormSubmit(event, this)">
-                    <input type="email" placeholder="deine@email.de" required>
-                    <button type="submit" class="signup-form-btn">
+                <form id="webform986923000000751004-footer" name="WebToContacts986923000000751004Footer" class="earlybird-form zoho-webform" accept-charset="UTF-8">
+                    <!-- Do not remove this code. Required by the Zoho WebToContact form. -->
+                    <input type="text" name="xnQsjsdp" value="a7b63032d556e5b08270bdce7315725a2763711ac3b31cad8875f0ad43790ae3" hidden>
+                    <input type="hidden" name="zc_gad" value="">
+                    <input type="text" name="xmIwtLD" value="7d45384b39f999c6ba4693c1825fd936ef5844ca4ab415f96b7d3cdea7dc0cf39d85b9fbe673d2bcce38866758df2879" hidden>
+                    <input type="text" name="actionType" value="Q29udGFjdHM=" hidden>
+                    <input type="text" name="returnURL" value="null" hidden>
+                    <input type="text" name="aG9uZXlwb3Q" value="" hidden tabindex="-1" autocomplete="off">
+                    <div class="earlybird-fields">
+                        <input class="earlybird-field" type="text" name="Account Name" placeholder="Kunde-Name" maxlength="100" aria-label="Kunde-Name" required>
+                        <input class="earlybird-field" type="text" name="Last Name" placeholder="Nachname" maxlength="80" aria-label="Nachname" required>
+                        <input class="earlybird-field earlybird-field--wide" type="email" name="Email" ftype="email" placeholder="deine@email.de" maxlength="100" aria-label="E-Mail" required>
+                    </div>
+                    <button type="submit" class="signup-form-btn formsubmit">
                         Sonderpreis reservieren
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </button>
@@ -1097,21 +1172,98 @@
             document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function handleFormSubmit(event, form) {
-            event.preventDefault();
-            const email = form.querySelector('input[type="email"]').value;
-            if (email) {
-                // Show confirmation inline
-                const btn = form.querySelector('button');
-                const originalText = btn.innerHTML;
-                btn.innerHTML = '✓ Angemeldet!';
-                btn.style.background = '#4caf50';
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.style.background = '';
-                }, 3000);
-            }
+        function showZohoMessage(message, isError) {
+            const splash = document.getElementById("wf_splash");
+            const icon = splash.querySelector(".wf-custom-check");
+            document.getElementById("wf_splash_info").textContent = message;
+            icon.style.background = isError ? "#9d3a3a" : "";
+            splash.hidden = false;
+            clearTimeout(showZohoMessage.timeout);
+            showZohoMessage.timeout = setTimeout(() => {
+                splash.hidden = true;
+            }, 5000);
         }
+
+        function validateZohoForm(form) {
+            const accountName = form.elements["Account Name"];
+            const lastName = form.elements["Last Name"];
+            const email = form.elements.Email;
+
+            if (!accountName.value.trim()) {
+                alert("Kunde-Name darf nicht leer sein.");
+                accountName.focus();
+                return false;
+            }
+
+            if (!lastName.value.trim()) {
+                alert("Nachname darf nicht leer sein.");
+                lastName.focus();
+                return false;
+            }
+
+            if (!email.value.trim() || !email.checkValidity()) {
+                alert("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
+                email.focus();
+                return false;
+            }
+
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("service") === "smarturl" && !form.elements.service) {
+                const smartUrlField = document.createElement("input");
+                smartUrlField.type = "hidden";
+                smartUrlField.name = "service";
+                smartUrlField.value = "smarturl";
+                form.appendChild(smartUrlField);
+            }
+
+            return true;
+        }
+
+        function submitZohoForm(event) {
+            event.preventDefault();
+            const form = event.currentTarget;
+            if (!validateZohoForm(form)) {
+                return;
+            }
+
+            const submitButton = form.querySelector(".formsubmit");
+            submitButton.disabled = true;
+
+            if (typeof _wfa_track !== "undefined" && _wfa_track.wfa_submit) {
+                _wfa_track.wfa_submit(event);
+            }
+
+            const request = new XMLHttpRequest();
+            request.open("POST", "https://crm.zoho.eu/crm/WebToContactForm", true);
+            request.onload = function () {
+                if (request.status >= 200 && request.status < 300) {
+                    let message = "Danke! Du bist für den Early-Bird-Start vorgemerkt.";
+                    try {
+                        const data = JSON.parse(request.responseText);
+                        message = data.actionvalue || message;
+                    } catch (error) {
+                        // Zoho may return an empty response after a successful submission.
+                    }
+                    form.reset();
+                    showZohoMessage(message, false);
+                } else {
+                    showZohoMessage("Die Anmeldung konnte nicht gesendet werden. Bitte versuche es erneut.", true);
+                }
+                submitButton.disabled = false;
+            };
+            request.onerror = function () {
+                showZohoMessage("Die Anmeldung konnte nicht gesendet werden. Bitte versuche es erneut.", true);
+                submitButton.disabled = false;
+            };
+            request.send(new FormData(form));
+        }
+
+        document.querySelectorAll(".zoho-webform").forEach((form) => {
+            form.addEventListener("submit", submitZohoForm);
+        });
     </script>
+    <!-- Do not remove this: Zoho WebForm analytics tracking code starts. -->
+    <script id="wf_anal" src="https://crm.zohopublic.eu/crm/WebFormAnalyticsServeServlet?rid=6ece80ec554a5384bce04304d7d6f8e268644523f443f8147e0d803e8559f97c28769eee4d84f6db24ff9f0fdd238c07gid4895574f1f103c01742a3c288e9a2e2075c150a7316e5b3f3ba96887a30d0e5egida2aa6a8ec16a7b6445e14ef21356a23340f40a32127aaba087f0e5f68ad707b3gidca6f5853d7ba5780c5ed66c740d4e50dea76cf8f040b7ee7d35aeda299362ca9&amp;tw=9f82c2f26b89e5a996205a3cb93aaab9deb4cfc5c1db00f70c3d5a5bab4af0de"></script>
+    <!-- Do not remove this: Zoho WebForm analytics tracking code ends. -->
 </body>
 </html>
