@@ -205,6 +205,7 @@
         .hero-form {
             max-width: 460px;
             margin-bottom: var(--space-sm);
+            scroll-margin-top: 96px;
         }
 
         .earlybird-form {
@@ -277,6 +278,32 @@
             font-family: var(--font-sans);
             font-size: 10px;
             color: var(--color-blue-gray);
+        }
+
+        .earlybird-consent {
+            display: flex;
+            gap: 9px;
+            align-items: flex-start;
+            color: var(--color-blue-gray);
+            font-family: var(--font-sans);
+            font-size: 11px;
+            font-weight: 300;
+            line-height: 1.45;
+            text-align: left;
+        }
+
+        .earlybird-consent input {
+            flex: none;
+            width: 15px;
+            height: 15px;
+            margin-top: 2px;
+            accent-color: var(--color-purple);
+        }
+
+        .earlybird-consent a {
+            color: var(--color-purple);
+            font-weight: 500;
+            text-decoration: underline;
         }
 
         /* Hero trust badges */
@@ -624,6 +651,7 @@
             padding: var(--space-2xl) 0;
             background: linear-gradient(135deg, var(--color-navy) 0%, #4a3a4d 100%);
             text-align: center;
+            scroll-margin-top: 80px;
         }
 
         /* Form */
@@ -666,6 +694,14 @@
             font-size: 12px;
             color: rgba(255,255,255,0.6);
             font-family: var(--font-sans);
+        }
+
+        .signup-form .earlybird-consent {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .signup-form .earlybird-consent a {
+            color: var(--color-white);
         }
 
         /* Checklist */
@@ -869,7 +905,7 @@
             <a href="/" class="navbar-logo">
                 <img src="https://stellamia.eu/wp-content/uploads/2025/03/Lunea-1.png" alt="Stellamia">
             </a>
-            <a href="#signup" class="navbar-cta">Jetzt Earlybird-Konditionen sichern!</a>
+            <a href="#signup-form" class="navbar-cta">Jetzt Earlybird-Konditionen sichern!</a>
         </div>
     </nav>
 
@@ -897,6 +933,10 @@
                             <input class="earlybird-field" type="text" name="Last Name" placeholder="Nachname" maxlength="80" aria-label="Nachname" required>
                             <input class="earlybird-field earlybird-field--wide" type="email" name="Email" ftype="email" placeholder="deine@email.de" maxlength="100" aria-label="E-Mail" required>
                         </div>
+                        <label class="earlybird-consent">
+                            <input type="checkbox" class="privacy-consent" required aria-required="true">
+                            <span>Ich möchte Informationen zu den Stellamia-Editionen und Early-Bird-Angeboten per E-Mail erhalten. Ich habe die <a href="https://stellamia.eu/datenschutzerklaerung-eu/" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen. Die Einwilligung kann ich jederzeit widerrufen.</span>
+                        </label>
                         <button type="submit" class="hero-form-btn formsubmit">
                             Early-Bird sichern
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1067,6 +1107,10 @@
                         <input class="earlybird-field" type="text" name="Last Name" placeholder="Nachname" maxlength="80" aria-label="Nachname" required>
                         <input class="earlybird-field earlybird-field--wide" type="email" name="Email" ftype="email" placeholder="deine@email.de" maxlength="100" aria-label="E-Mail" required>
                     </div>
+                    <label class="earlybird-consent">
+                        <input type="checkbox" class="privacy-consent" required aria-required="true">
+                        <span>Ich möchte Informationen zu den Stellamia-Editionen und Early-Bird-Angeboten per E-Mail erhalten. Ich habe die <a href="https://stellamia.eu/datenschutzerklaerung-eu/" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen. Die Einwilligung kann ich jederzeit widerrufen.</span>
+                    </label>
                     <button type="submit" class="signup-form-btn formsubmit">
                         Sonderpreis reservieren
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1097,16 +1141,16 @@
                     <p class="footer-tagline">Warm, ehrlich, alltagstauglich. Begleitung für Eltern in den intensivsten Jahren.</p>
                 </div>
                 <nav class="footer-nav">
-                    <a href="#signup">Early-Bird-Liste</a>
+                    <a href="#signup-form">Early-Bird-Liste</a>
                     <a href="https://www.stellamia.eu">Hauptseite</a>
                     <a href="#">Impressum</a>
-                    <a href="#">Datenschutz</a>
+                    <a href="https://stellamia.eu/datenschutzerklaerung-eu/" target="_blank" rel="noopener">Datenschutz</a>
                 </nav>
             </div>
             <div class="footer-bottom">
-                <p class="footer-dsgvo">Mit deiner Anmeldung erhältst du Informationen zu den neuen Stellamia-Editionen 2026 und exklusive Early-Bird-Angebote. Du kannst dich jederzeit mit einem Klick wieder abmelden. Mehr in unserer Datenschutzerklärung.</p>
+                <p class="footer-dsgvo">Mit deiner Anmeldung erhältst du Informationen zu den neuen Stellamia-Editionen 2026 und exklusive Early-Bird-Angebote. Du kannst dich jederzeit mit einem Klick wieder abmelden. Mehr in unserer <a href="https://stellamia.eu/datenschutzerklaerung-eu/" target="_blank" rel="noopener">Datenschutzerklärung</a>.</p>
                 <p class="footer-copyright">© 2026 Stellamia · Mit Herz gemacht</p>
-                <a href="#signup" class="footer-cta-link">
+                <a href="#signup-form" class="footer-cta-link">
                     Zur Anmeldung
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
@@ -1119,13 +1163,14 @@
          ============================================ -->
     <script>
         function scrollToSignup() {
-            document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('signup-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         function validateZohoForm(form) {
             const accountName = form.elements["Account Name"];
             const lastName = form.elements["Last Name"];
             const email = form.elements.Email;
+            const consent = form.querySelector(".privacy-consent");
 
             if (!accountName.value.trim()) {
                 alert("Kunde-Name darf nicht leer sein.");
@@ -1142,6 +1187,12 @@
             if (!email.value.trim() || !email.checkValidity()) {
                 alert("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
                 email.focus();
+                return false;
+            }
+
+            if (!consent.checked) {
+                alert("Bitte bestätige deine Einwilligung zum Erhalt der Early-Bird-Informationen.");
+                consent.focus();
                 return false;
             }
 

@@ -65,6 +65,7 @@ La landing mantiene la navegacion hacia el formulario con `scrollToSignup()` y
 registra ambos bloques Early-Bird mediante Zoho CRM WebToContact. El script:
 
 - valida los campos obligatorios de nombre de cliente, apellido y correo electronico;
+- exige la aceptacion visible de comunicaciones y enlaza la politica de privacidad;
 - envia los datos a `https://crm.zoho.eu/crm/WebToContactForm`;
 - mantiene los parametros ocultos y el script de analitica requeridos por Zoho;
 - redirige a `danke.html` tras un registro aceptado por Zoho.
@@ -126,15 +127,15 @@ debe comprobar:
 - Navegacion de los CTA al bloque de registro.
 - Validacion de los campos de correo.
 - Carga de logo, imagenes y fuentes externas.
-- Enlaces legales (`Impressum` y `Datenschutz`), actualmente definidos como
-  placeholders `#`.
+- Enlace legal `Impressum`, actualmente definido como placeholder `#`.
 
 ## Pendientes antes de produccion
 
 - Validar en Zoho CRM la recepcion, segmentacion y automatizaciones de los registros Early-Bird.
-- Incorporar consentimiento, privacidad y mecanismo real de baja conforme a
-  los requisitos aplicables.
-- Sustituir los enlaces placeholder de aviso legal y privacidad.
+- Incorporar el mecanismo real de baja conforme a los requisitos aplicables.
+- Configurar en Zoho un campo de consentimiento para conservar evidencia de
+  la aceptacion mostrada en el formulario.
+- Sustituir el enlace placeholder de aviso legal (`Impressum`).
 - Confirmar que cifras, testimonio, descuento y fecha de lanzamiento estan
   aprobados para publicacion.
 - Considerar versionar u hospedar bajo control propio las imagenes criticas de
