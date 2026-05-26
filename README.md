@@ -67,7 +67,7 @@ registra ambos bloques Early-Bird mediante Zoho CRM WebToContact. El script:
 - valida los campos obligatorios de nombre de cliente, apellido y correo electronico;
 - envia los datos a `https://crm.zoho.eu/crm/WebToContactForm`;
 - mantiene los parametros ocultos y el script de analitica requeridos por Zoho;
-- muestra confirmacion o error sin abandonar la landing.
+- redirige a `danke.html` tras un registro aceptado por Zoho.
 
 El consentimiento, la politica de privacidad y la baja deben revisarse antes
 de usar la captacion en produccion.

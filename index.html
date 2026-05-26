@@ -279,51 +279,6 @@
             color: var(--color-blue-gray);
         }
 
-        .wf-custom-message {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            z-index: 11000;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            max-width: calc(100% - 32px);
-            padding: 12px 16px;
-            border: 1px solid var(--color-beige);
-            border-radius: var(--border-radius-sm);
-            background: var(--color-white);
-            box-shadow: var(--shadow-card);
-            color: var(--color-navy);
-            font-family: var(--font-sans);
-            font-size: 14px;
-            transform: translateX(-50%);
-        }
-
-        .wf-custom-message[hidden] {
-            display: none;
-        }
-
-        .wf-custom-check {
-            position: relative;
-            flex: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--color-purple);
-        }
-
-        .wf-custom-check::after {
-            content: "";
-            position: absolute;
-            left: 7px;
-            top: 4px;
-            width: 5px;
-            height: 9px;
-            border-right: 2px solid var(--color-white);
-            border-bottom: 2px solid var(--color-white);
-            transform: rotate(45deg);
-        }
-
         /* Hero trust badges */
         .hero-badges {
             display: flex;
@@ -906,11 +861,6 @@
 </head>
 <body>
 
-    <div class="wf-custom-message" id="wf_splash" role="status" aria-live="polite" hidden>
-        <span class="wf-custom-check" aria-hidden="true"></span>
-        <span id="wf_splash_info"></span>
-    </div>
-
     <!-- ============================================
          NAVIGATION
          ============================================ -->
@@ -934,13 +884,13 @@
                 <p>Wir machen Stellamia noch spezifischer: umfangreiche Unterstützung für die jeweilige Lebensphase <em>deines</em> Kindes von 0–1, 1–3 und 3–6 Jahren. Individuell auf die Persönlichkeit deines Kind zugeschnitten. Trag dich jetzt in die Mailingliste ein und sei als Erste:r dabei, wenn die neuen Editionen zu Sonderpreisen starten.</p>
 
                 <div class="hero-form" id="signup">
-                    <form id="webform986923000000751004" name="WebToContacts986923000000751004" class="earlybird-form zoho-webform" accept-charset="UTF-8">
+                    <form id="webform986923000000751004" name="WebToContacts986923000000751004" class="earlybird-form zoho-webform" action="https://crm.zoho.eu/crm/WebToContactForm" method="POST" accept-charset="UTF-8">
                         <!-- Do not remove this code. Required by the Zoho WebToContact form. -->
-                        <input type="text" name="xnQsjsdp" value="a7b63032d556e5b08270bdce7315725a2763711ac3b31cad8875f0ad43790ae3" hidden>
+                        <input type="text" name="xnQsjsdp" value="beb9261ad04a5305a952ec8f2a5a3bb2c8feb5e9e9ec4f7f30d8d0c0ea98c03c" hidden>
                         <input type="hidden" name="zc_gad" value="">
-                        <input type="text" name="xmIwtLD" value="7d45384b39f999c6ba4693c1825fd936ef5844ca4ab415f96b7d3cdea7dc0cf39d85b9fbe673d2bcce38866758df2879" hidden>
+                        <input type="text" name="xmIwtLD" value="392b80f38e052367ac96d559aa93cf267374e2850d0bd3be7f6423bd7476ffb4d082fbcf39c51acc53f95fcf803329b6" hidden>
                         <input type="text" name="actionType" value="Q29udGFjdHM=" hidden>
-                        <input type="text" name="returnURL" value="null" hidden>
+                        <input type="text" name="returnURL" value="https://crowdfunding.stellamia.eu/danke.html" hidden>
                         <input type="text" name="aG9uZXlwb3Q" value="" hidden tabindex="-1" autocomplete="off">
                         <div class="earlybird-fields">
                             <input class="earlybird-field" type="text" name="Account Name" placeholder="Kunde-Name" maxlength="100" aria-label="Kunde-Name" required>
@@ -1104,13 +1054,13 @@
             </div>
 
             <div class="signup-form">
-                <form id="webform986923000000751004-footer" name="WebToContacts986923000000751004Footer" class="earlybird-form zoho-webform" accept-charset="UTF-8">
+                <form id="webform986923000000751004-footer" name="WebToContacts986923000000751004Footer" class="earlybird-form zoho-webform" action="https://crm.zoho.eu/crm/WebToContactForm" method="POST" accept-charset="UTF-8">
                     <!-- Do not remove this code. Required by the Zoho WebToContact form. -->
-                    <input type="text" name="xnQsjsdp" value="a7b63032d556e5b08270bdce7315725a2763711ac3b31cad8875f0ad43790ae3" hidden>
+                    <input type="text" name="xnQsjsdp" value="beb9261ad04a5305a952ec8f2a5a3bb2c8feb5e9e9ec4f7f30d8d0c0ea98c03c" hidden>
                     <input type="hidden" name="zc_gad" value="">
-                    <input type="text" name="xmIwtLD" value="7d45384b39f999c6ba4693c1825fd936ef5844ca4ab415f96b7d3cdea7dc0cf39d85b9fbe673d2bcce38866758df2879" hidden>
+                    <input type="text" name="xmIwtLD" value="392b80f38e052367ac96d559aa93cf267374e2850d0bd3be7f6423bd7476ffb4d082fbcf39c51acc53f95fcf803329b6" hidden>
                     <input type="text" name="actionType" value="Q29udGFjdHM=" hidden>
-                    <input type="text" name="returnURL" value="null" hidden>
+                    <input type="text" name="returnURL" value="https://crowdfunding.stellamia.eu/danke.html" hidden>
                     <input type="text" name="aG9uZXlwb3Q" value="" hidden tabindex="-1" autocomplete="off">
                     <div class="earlybird-fields">
                         <input class="earlybird-field" type="text" name="Account Name" placeholder="Kunde-Name" maxlength="100" aria-label="Kunde-Name" required>
@@ -1172,18 +1122,6 @@
             document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function showZohoMessage(message, isError) {
-            const splash = document.getElementById("wf_splash");
-            const icon = splash.querySelector(".wf-custom-check");
-            document.getElementById("wf_splash_info").textContent = message;
-            icon.style.background = isError ? "#9d3a3a" : "";
-            splash.hidden = false;
-            clearTimeout(showZohoMessage.timeout);
-            showZohoMessage.timeout = setTimeout(() => {
-                splash.hidden = true;
-            }, 5000);
-        }
-
         function validateZohoForm(form) {
             const accountName = form.elements["Account Name"];
             const lastName = form.elements["Last Name"];
@@ -1220,42 +1158,14 @@
         }
 
         function submitZohoForm(event) {
-            event.preventDefault();
             const form = event.currentTarget;
             if (!validateZohoForm(form)) {
+                event.preventDefault();
                 return;
             }
 
-            const submitButton = form.querySelector(".formsubmit");
-            submitButton.disabled = true;
+            form.querySelector(".formsubmit").disabled = true;
 
-            if (typeof _wfa_track !== "undefined" && _wfa_track.wfa_submit) {
-                _wfa_track.wfa_submit(event);
-            }
-
-            const request = new XMLHttpRequest();
-            request.open("POST", "https://crm.zoho.eu/crm/WebToContactForm", true);
-            request.onload = function () {
-                if (request.status >= 200 && request.status < 300) {
-                    let message = "Danke! Du bist für den Early-Bird-Start vorgemerkt.";
-                    try {
-                        const data = JSON.parse(request.responseText);
-                        message = data.actionvalue || message;
-                    } catch (error) {
-                        // Zoho may return an empty response after a successful submission.
-                    }
-                    form.reset();
-                    showZohoMessage(message, false);
-                } else {
-                    showZohoMessage("Die Anmeldung konnte nicht gesendet werden. Bitte versuche es erneut.", true);
-                }
-                submitButton.disabled = false;
-            };
-            request.onerror = function () {
-                showZohoMessage("Die Anmeldung konnte nicht gesendet werden. Bitte versuche es erneut.", true);
-                submitButton.disabled = false;
-            };
-            request.send(new FormData(form));
         }
 
         document.querySelectorAll(".zoho-webform").forEach((form) => {
@@ -1263,7 +1173,7 @@
         });
     </script>
     <!-- Do not remove this: Zoho WebForm analytics tracking code starts. -->
-    <script id="wf_anal" src="https://crm.zohopublic.eu/crm/WebFormAnalyticsServeServlet?rid=6ece80ec554a5384bce04304d7d6f8e268644523f443f8147e0d803e8559f97c28769eee4d84f6db24ff9f0fdd238c07gid4895574f1f103c01742a3c288e9a2e2075c150a7316e5b3f3ba96887a30d0e5egida2aa6a8ec16a7b6445e14ef21356a23340f40a32127aaba087f0e5f68ad707b3gidca6f5853d7ba5780c5ed66c740d4e50dea76cf8f040b7ee7d35aeda299362ca9&amp;tw=9f82c2f26b89e5a996205a3cb93aaab9deb4cfc5c1db00f70c3d5a5bab4af0de"></script>
+    <script id="wf_anal" src="https://crm.zohopublic.eu/crm/WebFormAnalyticsServeServlet?rid=e636b9eed497cc83a11416b561919cf3e47b6c7deeeac5b826d37861aec3ab9e4bf9777231ad4c2a06ac4ab164bdd203gidc06f464025ac4b6ad9f66b4939f997492c3ca066aee567cec4b75a005e29e93cgidb5d84612cc6e46e130fa099b55cbabe801c25f3f29b40ad273ef486435db4385gid92bc872d1d5dc09890606d1ec0a174fc076feb97cd5c6df29314bff3a9e05849&amp;tw=3dbe49cd963c2a1585760ed45e540e310b60759324f253bd326cbf677b176a76"></script>
     <!-- Do not remove this: Zoho WebForm analytics tracking code ends. -->
 </body>
 </html>
