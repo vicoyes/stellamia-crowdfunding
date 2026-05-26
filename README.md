@@ -12,10 +12,11 @@ tareas.
 ## Estado actual
 
 - Aplicacion de una sola pagina implementada en `index.html`.
-- HTML, CSS y JavaScript vanilla embebidos; no existe proceso de build.
+- HTML, CSS y JavaScript vanilla en archivos estaticos; no existe proceso de build.
 - Diseno responsive con puntos de ajuste para escritorio, tablet y movil.
 - Formularios Early-Bird conectados a Zoho CRM WebToContact: solicitan
-  nombre de cliente, apellido y correo electronico y muestran confirmacion tras el envio.
+  nombre de cliente, apellido y correo electronico y redirigen a la pagina de
+  confirmacion tras el envio.
 - Dominio personalizado configurado mediante `CNAME`:
   `crowdfunding.stellamia.eu`.
 
@@ -25,6 +26,11 @@ tareas.
 .
 |-- CNAME                          # Dominio para GitHub Pages
 |-- index.html                     # Landing crowdfunding publica
+|-- danke.html                     # Confirmacion tras el registro
+|-- css/
+|   `-- styles.css                 # Estilos de la landing
+|-- scripts/
+|   `-- main.js                    # Navegacion y validacion del formulario
 |-- mocks/
 |   `-- comments-task-detail.html  # Mock de UI para comentarios de una tarea
 `-- README.md                      # Documentacion del proyecto
@@ -47,7 +53,8 @@ Abrir:
 
 ## Landing page
 
-`index.html` contiene toda la implementacion de la pagina:
+`index.html` contiene la estructura de la pagina, con estilos en
+`css/styles.css` y comportamiento en `scripts/main.js`:
 
 | Area | Descripcion |
 | --- | --- |
@@ -119,8 +126,8 @@ La configuracion de GitHub Pages y DNS ocurre fuera de este repositorio.
 
 ## Mantenimiento
 
-Para cambios de contenido o estilos, editar `index.html`; el CSS y el
-JavaScript estan embebidos en el mismo archivo. Al actualizar la pagina se
+Para cambios de contenido, editar `index.html`; para estilos, `css/styles.css`;
+y para la validacion o navegacion, `scripts/main.js`. Al actualizar la pagina se
 debe comprobar:
 
 - Visualizacion en anchos de movil, tablet y escritorio.
