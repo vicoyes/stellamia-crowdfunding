@@ -306,6 +306,18 @@
             text-decoration: underline;
         }
 
+        .earlybird-consent-error {
+            display: none;
+            color: #b23a3a;
+            font-family: var(--font-sans);
+            font-size: 11px;
+            text-align: left;
+        }
+
+        .earlybird-consent-error.is-visible {
+            display: block;
+        }
+
         /* Hero trust badges */
         .hero-badges {
             display: flex;
@@ -922,9 +934,9 @@
                 <div class="hero-form" id="signup">
                     <form id="webform986923000000751004" name="WebToContacts986923000000751004" class="earlybird-form zoho-webform" action="https://crm.zoho.eu/crm/WebToContactForm" method="POST" accept-charset="UTF-8">
                         <!-- Do not remove this code. Required by the Zoho WebToContact form. -->
-                        <input type="text" name="xnQsjsdp" value="beb9261ad04a5305a952ec8f2a5a3bb2c8feb5e9e9ec4f7f30d8d0c0ea98c03c" hidden>
+                        <input type="text" name="xnQsjsdp" value="3b8cd0eab6c7828c919e956882d560911c768aec199aa56add04d5f9cb2dbfde" hidden>
                         <input type="hidden" name="zc_gad" value="">
-                        <input type="text" name="xmIwtLD" value="392b80f38e052367ac96d559aa93cf267374e2850d0bd3be7f6423bd7476ffb4d082fbcf39c51acc53f95fcf803329b6" hidden>
+                        <input type="text" name="xmIwtLD" value="2ebf40ef65c2d9a945fb08c37ae0783914d4980eeee84ab4b1ca4004a2cda43a199b6506f232a0cc47dd76f657c63f01" hidden>
                         <input type="text" name="actionType" value="Q29udGFjdHM=" hidden>
                         <input type="text" name="returnURL" value="https://crowdfunding.stellamia.eu/danke.html" hidden>
                         <input type="text" name="aG9uZXlwb3Q" value="" hidden tabindex="-1" autocomplete="off">
@@ -933,10 +945,13 @@
                             <input class="earlybird-field" type="text" name="Last Name" placeholder="Nachname" maxlength="80" aria-label="Nachname" required>
                             <input class="earlybird-field earlybird-field--wide" type="email" name="Email" ftype="email" placeholder="deine@email.de" maxlength="100" aria-label="E-Mail" required>
                         </div>
-                        <label class="earlybird-consent">
-                            <input type="checkbox" class="privacy-consent" required aria-required="true">
-                            <span>Ich möchte Informationen zu den Stellamia-Editionen und Early-Bird-Angeboten per E-Mail erhalten. Ich habe die <a href="https://stellamia.eu/datenschutzerklaerung-eu/" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen. Die Einwilligung kann ich jederzeit widerrufen.</span>
-                        </label>
+                        <div class="earlybird-consent-group">
+                            <label class="earlybird-consent">
+                                <input autocomplete="off" id="privacyTool986923000000751004" type="checkbox" class="privacy-consent" name="" aria-checked="false" aria-errormessage="privacyErr986923000000751004" aria-label="privacyTool">
+                                <span>Ich möchte Informationen zu den Stellamia-Editionen und Early-Bird-Angeboten per E-Mail erhalten. Ich habe die <a href="https://stellamia.eu/datenschutzerklaerung-eu/" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen. Die Einwilligung kann ich jederzeit widerrufen.</span>
+                            </label>
+                            <div id="privacyErr986923000000751004" class="earlybird-consent-error" aria-live="polite">Bitte akzeptieren Sie diese Einwilligung.</div>
+                        </div>
                         <button type="submit" class="hero-form-btn formsubmit">
                             Early-Bird sichern
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1096,9 +1111,9 @@
             <div class="signup-form">
                 <form id="webform986923000000751004-footer" name="WebToContacts986923000000751004Footer" class="earlybird-form zoho-webform" action="https://crm.zoho.eu/crm/WebToContactForm" method="POST" accept-charset="UTF-8">
                     <!-- Do not remove this code. Required by the Zoho WebToContact form. -->
-                    <input type="text" name="xnQsjsdp" value="beb9261ad04a5305a952ec8f2a5a3bb2c8feb5e9e9ec4f7f30d8d0c0ea98c03c" hidden>
+                    <input type="text" name="xnQsjsdp" value="3b8cd0eab6c7828c919e956882d560911c768aec199aa56add04d5f9cb2dbfde" hidden>
                     <input type="hidden" name="zc_gad" value="">
-                    <input type="text" name="xmIwtLD" value="392b80f38e052367ac96d559aa93cf267374e2850d0bd3be7f6423bd7476ffb4d082fbcf39c51acc53f95fcf803329b6" hidden>
+                    <input type="text" name="xmIwtLD" value="2ebf40ef65c2d9a945fb08c37ae0783914d4980eeee84ab4b1ca4004a2cda43a199b6506f232a0cc47dd76f657c63f01" hidden>
                     <input type="text" name="actionType" value="Q29udGFjdHM=" hidden>
                     <input type="text" name="returnURL" value="https://crowdfunding.stellamia.eu/danke.html" hidden>
                     <input type="text" name="aG9uZXlwb3Q" value="" hidden tabindex="-1" autocomplete="off">
@@ -1107,10 +1122,13 @@
                         <input class="earlybird-field" type="text" name="Last Name" placeholder="Nachname" maxlength="80" aria-label="Nachname" required>
                         <input class="earlybird-field earlybird-field--wide" type="email" name="Email" ftype="email" placeholder="deine@email.de" maxlength="100" aria-label="E-Mail" required>
                     </div>
-                    <label class="earlybird-consent">
-                        <input type="checkbox" class="privacy-consent" required aria-required="true">
-                        <span>Ich möchte Informationen zu den Stellamia-Editionen und Early-Bird-Angeboten per E-Mail erhalten. Ich habe die <a href="https://stellamia.eu/datenschutzerklaerung-eu/" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen. Die Einwilligung kann ich jederzeit widerrufen.</span>
-                    </label>
+                    <div class="earlybird-consent-group">
+                        <label class="earlybird-consent">
+                            <input autocomplete="off" id="privacyTool986923000000751004-footer" type="checkbox" class="privacy-consent" name="" aria-checked="false" aria-errormessage="privacyErr986923000000751004-footer" aria-label="privacyTool">
+                            <span>Ich möchte Informationen zu den Stellamia-Editionen und Early-Bird-Angeboten per E-Mail erhalten. Ich habe die <a href="https://stellamia.eu/datenschutzerklaerung-eu/" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen. Die Einwilligung kann ich jederzeit widerrufen.</span>
+                        </label>
+                        <div id="privacyErr986923000000751004-footer" class="earlybird-consent-error" aria-live="polite">Bitte akzeptieren Sie diese Einwilligung.</div>
+                    </div>
                     <button type="submit" class="signup-form-btn formsubmit">
                         Sonderpreis reservieren
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1171,6 +1189,7 @@
             const lastName = form.elements["Last Name"];
             const email = form.elements.Email;
             const consent = form.querySelector(".privacy-consent");
+            const consentError = form.querySelector(".earlybird-consent-error");
 
             if (!accountName.value.trim()) {
                 alert("Kunde-Name darf nicht leer sein.");
@@ -1191,10 +1210,14 @@
             }
 
             if (!consent.checked) {
-                alert("Bitte bestätige deine Einwilligung zum Erhalt der Early-Bird-Informationen.");
+                consent.setAttribute("aria-invalid", "true");
+                consentError.classList.add("is-visible");
                 consent.focus();
                 return false;
             }
+
+            consent.setAttribute("aria-invalid", "false");
+            consentError.classList.remove("is-visible");
 
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get("service") === "smarturl" && !form.elements.service) {
@@ -1206,6 +1229,15 @@
             }
 
             return true;
+        }
+
+        function clearPrivacyError(event) {
+            const consent = event.currentTarget;
+            const error = consent.closest(".earlybird-consent-group").querySelector(".earlybird-consent-error");
+            if (consent.checked) {
+                consent.setAttribute("aria-invalid", "false");
+                error.classList.remove("is-visible");
+            }
         }
 
         function submitZohoForm(event) {
@@ -1221,10 +1253,11 @@
 
         document.querySelectorAll(".zoho-webform").forEach((form) => {
             form.addEventListener("submit", submitZohoForm);
+            form.querySelector(".privacy-consent").addEventListener("change", clearPrivacyError);
         });
     </script>
     <!-- Do not remove this: Zoho WebForm analytics tracking code starts. -->
-    <script id="wf_anal" src="https://crm.zohopublic.eu/crm/WebFormAnalyticsServeServlet?rid=e636b9eed497cc83a11416b561919cf3e47b6c7deeeac5b826d37861aec3ab9e4bf9777231ad4c2a06ac4ab164bdd203gidc06f464025ac4b6ad9f66b4939f997492c3ca066aee567cec4b75a005e29e93cgidb5d84612cc6e46e130fa099b55cbabe801c25f3f29b40ad273ef486435db4385gid92bc872d1d5dc09890606d1ec0a174fc076feb97cd5c6df29314bff3a9e05849&amp;tw=3dbe49cd963c2a1585760ed45e540e310b60759324f253bd326cbf677b176a76"></script>
+    <script id="wf_anal" src="https://crm.zohopublic.eu/crm/WebFormAnalyticsServeServlet?rid=add1d18bcc4031e143f721ea69aa438bbf74d7628aaa47963882d27d4e48a058f6c3bc621f42849084bf3628d3bec579gid0006422527c2c1019bc9b0b12698a3034a14d15f0a9e6e56f4d10fbc8a033b04gid701bab7b965aa7c179e120036e24e0b1b9c9596482280b9363eefc32a3fc8a71gid74813b3aa97ec28d04138e5ca950da7b0c950bd16c81d1bc7bb07668aa1cf946&amp;tw=50f30aea9ea8bcfa7db0a3f1574d13a9a3d97aec0219df4f3730fc6e936dbfb7"></script>
     <!-- Do not remove this: Zoho WebForm analytics tracking code ends. -->
 </body>
 </html>
