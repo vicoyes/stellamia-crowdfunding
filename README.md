@@ -75,7 +75,7 @@ registra ambos bloques Early-Bird mediante Zoho CRM WebToContact. El script:
 - usa el control de privacidad generado por Zoho para exigir la aceptacion visible de comunicaciones y enlazar la politica de privacidad;
 - envia los datos a `https://crm.zoho.eu/crm/WebToContactForm`;
 - mantiene los parametros ocultos y el script de analitica requeridos por Zoho;
-- guarda el parametro `?city=...` de la landing en el campo oculto de Zoho `CONTACTCF1` (`none` si no se proporciona);
+- precarga el parametro `?city=...` de la landing en el campo visible `Wohnort` de Zoho `CONTACTCF1`;
 - redirige a `danke.html` tras un registro aceptado por Zoho.
 
 El consentimiento, la politica de privacidad y la baja deben revisarse antes

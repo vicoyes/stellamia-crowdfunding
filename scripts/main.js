@@ -4,7 +4,7 @@ function scrollToSignup() {
 
 function setFormCity(form) {
     const city = new URLSearchParams(window.location.search).get("city");
-    form.elements.CONTACTCF1.value = city && city.trim() ? city.slice(0, 255) : "none";
+    form.elements.CONTACTCF1.value = city && city.trim() ? city.slice(0, 255) : "";
 }
 
 function validateZohoForm(form) {
@@ -15,7 +15,7 @@ function validateZohoForm(form) {
     const consentError = form.querySelector(".earlybird-consent-error");
 
     if (!accountName.value.trim()) {
-        alert("Kunde-Name darf nicht leer sein.");
+        alert("Vorname darf nicht leer sein.");
         accountName.focus();
         return false;
     }
