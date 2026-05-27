@@ -4,7 +4,10 @@ function scrollToSignup() {
 
 function setFormCity(form) {
     const city = new URLSearchParams(window.location.search).get("city");
-    form.elements.CONTACTCF1.value = city && city.trim() ? city.slice(0, 255) : "";
+    const normalizedCity = city ? city.trim() : "";
+    form.elements.CONTACTCF1.value = normalizedCity && normalizedCity.toLowerCase() !== "none"
+        ? normalizedCity.slice(0, 255)
+        : "";
 }
 
 function validateZohoForm(form) {
