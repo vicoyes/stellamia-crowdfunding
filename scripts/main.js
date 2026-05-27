@@ -2,6 +2,11 @@ function scrollToSignup() {
     document.getElementById('signup-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
+function setFormCity(form) {
+    const city = new URLSearchParams(window.location.search).get("city");
+    form.elements.CONTACTCF1.value = city && city.trim() ? city.slice(0, 255) : "none";
+}
+
 function validateZohoForm(form) {
     const accountName = form.elements["Account Name"];
     const lastName = form.elements["Last Name"];
@@ -74,6 +79,7 @@ document.querySelectorAll(".edition-card-cta").forEach((button) => {
 });
 
 document.querySelectorAll(".zoho-webform").forEach((form) => {
+    setFormCity(form);
     form.addEventListener("submit", submitZohoForm);
     form.querySelector(".privacy-consent").addEventListener("change", clearPrivacyError);
 });
