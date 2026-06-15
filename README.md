@@ -18,7 +18,9 @@ tareas.
   nombre de cliente, apellido y correo electronico y redirigen a la pagina de
   confirmacion tras el envio.
 - Google Analytics 4 configurado con el flujo de Stellamia
-  `G-LRTH1PY8NP` tanto en la landing como en la pagina de confirmacion.
+  `G-LRTH1PY8NP` tanto en la landing como en la pagina de confirmacion. Google
+  Analytics y la analitica de Zoho solo se cargan tras aceptar las cookies
+  opcionales en el banner de consentimiento.
 - Dominio personalizado configurado mediante `CNAME`:
   `crowdfunding.stellamia.eu`.
 
@@ -29,6 +31,9 @@ tareas.
 |-- CNAME                          # Dominio para GitHub Pages
 |-- index.html                     # Landing crowdfunding publica
 |-- danke.html                     # Confirmacion tras el registro
+|-- impressum.html                 # Aviso legal
+|-- datenschutz.html               # Politica de privacidad del subdominio
+|-- cookie-richtlinie.html         # Informacion sobre cookies y analitica
 |-- css/
 |   `-- styles.css                 # Estilos de la landing
 |-- scripts/
@@ -137,14 +142,13 @@ debe comprobar:
 - Navegacion de los CTA al bloque de registro.
 - Validacion de los campos de correo.
 - Carga de logo, imagenes y fuentes externas.
-- Enlace legal `Impressum`, actualmente definido como placeholder `#`.
+- Contenido y enlaces de las paginas juridicas.
 
 ## Pendientes antes de produccion
 
 - Validar en Zoho CRM la recepcion, segmentacion y automatizaciones de los registros Early-Bird.
 - Incorporar el mecanismo real de baja conforme a los requisitos aplicables.
 - Verificar en Zoho que el control de privacidad registre la aceptacion y que las automatizaciones respeten su revocacion.
-- Sustituir el enlace placeholder de aviso legal (`Impressum`).
 - Confirmar que cifras, testimonio, descuento y fecha de lanzamiento estan
   aprobados para publicacion.
 - Considerar versionar u hospedar bajo control propio las imagenes criticas de
