@@ -17,6 +17,8 @@ tareas.
 - Formularios Early-Bird conectados a Zoho CRM WebToContact: solicitan
   nombre de cliente, apellido y correo electronico y redirigen a la pagina de
   confirmacion tras el envio.
+- Google Analytics 4 configurado con el flujo de Stellamia
+  `G-LRTH1PY8NP` tanto en la landing como en la pagina de confirmacion.
 - Dominio personalizado configurado mediante `CNAME`:
   `crowdfunding.stellamia.eu`.
 
