@@ -101,9 +101,14 @@ a {
 }
 
 .navbar-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-family: var(--font-sans);
     font-size: 12px;
     font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
     background: var(--color-purple);
     color: var(--color-white);
     padding: 8px 16px;
@@ -838,6 +843,17 @@ a {
 }
 
 @media (max-width: 767px) {
+    .navbar .container {
+        gap: var(--space-sm);
+    }
+    .navbar-logo img {
+        height: 48px;
+    }
+    .navbar-cta {
+        max-width: 190px;
+        padding: 7px 10px;
+        font-size: 11px;
+    }
     .hero h1 {
         font-size: 38px;
     }
@@ -873,6 +889,17 @@ a {
 }
 
 @media (max-width: 478px) {
+    .navbar .container {
+        padding: 0 var(--space-sm);
+    }
+    .navbar-logo img {
+        height: 44px;
+    }
+    .navbar-cta {
+        max-width: 168px;
+        padding: 6px 8px;
+        font-size: 10px;
+    }
     .hero {
         padding: 120px 0 60px;
         min-height: auto;
