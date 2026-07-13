@@ -75,6 +75,12 @@ a {
     padding: 0 var(--space-md);
 }
 
+.container-wide {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
 /* ============================================
    NAVIGATION
    ============================================ */
@@ -459,8 +465,14 @@ a {
 /* Edition Cards */
 .ediciones-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-md);
+}
+
+@media (max-width: 1199px) {
+    .ediciones-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .edition-card {
